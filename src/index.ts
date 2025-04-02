@@ -1,4 +1,4 @@
-import namedColours from '@/assets/namedColours.json'
+import namedColours from './assets/namedColours.json'
 
 interface NamedColours {
   [index: string]: string

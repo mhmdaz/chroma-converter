@@ -3,9 +3,6 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "preserve",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
     "resolveJsonModule": true,
     "outDir": "./dist",
     "declaration": true,
