@@ -39,8 +39,8 @@ Following are the supported colour formats (given with example)
 
 - **Colour Keywords** - `green`
 - **HEX** - `#008000` or `#0f0`
-- **RGB** - `rgb(00, 128, 00)` or `rgb(00 128 00)`
-- **RGBA** - `rgba(00, 128, 00, 1)` or `rgba(00 128 00 / 1)`
+- **RGB** - `rgb(0, 128, 0)` or `rgb(0 128 0)`
+- **RGBA** - `rgba(0, 128, 0, 1)` or `rgba(0 128 0 / 1)`
 - **HSL\*** - `hsl(120deg, 100%, 25%)` or `hsl(120deg 100% 25%)`
 - **HSLA\*** - `hsla(120deg, 100%, 25%, 1)` or `hsla(120deg 100% 25% / 1)`
 
