@@ -1,9 +1,15 @@
 const REG_EXP_HEX = '[a-f\\d]'
+
 const REG_EXP_0_TO_255 = '0*((?:1?\\d{1,2})|(?:2[0-4]\\d)|(?:25[0-5]))'
+const REG_EXP_N128_TO_127 = '(-?\\d+)'
+
 const REG_EXP_0_TO_1_FRACTION = '0*((?:0?(?:\\.\\d+)?)|(?:1(?:\\.0+)?))'
 const REG_EXP_0_TO_100_PERCENT = '0*(\\d{1,2}|100)\\%'
+
 const REG_EXP_0_TO_359_DEG = '0*((?:[12]?\\d{1,2})|(?:3[0-5]\\d))(?:deg)?'
-const REG_EXP_0_TO_2_PI_RAD = '0*(\\d+|(?:\\d*\\.\\d+))(?:rad)'
+const REG_EXP_0_TO_2_PI_RAD = '0*(\\d+|(?:\\d*\\.\\d+))rad'
+const REG_EXP_ANGLE = `(?:(?:${REG_EXP_0_TO_359_DEG})|(?:${REG_EXP_0_TO_2_PI_RAD}))`
+
 const REG_EXP_COMA_OR_SPACE_SEPARATOR = '\\s*[,\\s]\\s*'
 const REG_EXP_COMA_SEPARATOR = '\\s*[,]\\s*'
 const REG_EXP_SPACE_SEPARATOR = '\\s*[\\s]\\s*'
@@ -33,19 +39,19 @@ export const REG_EXP_MATCH = {
     'i',
   ),
   HSL_COMA: new RegExp(
-    `^hsl\\(\\s*(?:${REG_EXP_0_TO_359_DEG}|${REG_EXP_0_TO_2_PI_RAD})${REG_EXP_COMA_SEPARATOR}(?:(?:${REG_EXP_0_TO_100_PERCENT})|(?:${REG_EXP_0_TO_1_FRACTION}))${REG_EXP_COMA_SEPARATOR}(?:(?:${REG_EXP_0_TO_100_PERCENT})|(?:${REG_EXP_0_TO_1_FRACTION}))\\s*\\)$`,
+    `^hsl\\(\\s*${REG_EXP_ANGLE}${REG_EXP_COMA_SEPARATOR}${REG_EXP_0_TO_100_PERCENT}${REG_EXP_COMA_SEPARATOR}${REG_EXP_0_TO_100_PERCENT}\\s*\\)$`,
     'i',
   ),
   HSL_SPACE: new RegExp(
-    `^hsl\\(\\s*(?:${REG_EXP_0_TO_359_DEG}|${REG_EXP_0_TO_2_PI_RAD})${REG_EXP_SPACE_SEPARATOR}(?:(?:${REG_EXP_0_TO_100_PERCENT})|(?:${REG_EXP_0_TO_1_FRACTION}))${REG_EXP_SPACE_SEPARATOR}(?:(?:${REG_EXP_0_TO_100_PERCENT})|(?:${REG_EXP_0_TO_1_FRACTION}))\\s*\\)$`,
+    `^hsl\\(\\s*${REG_EXP_ANGLE}${REG_EXP_SPACE_SEPARATOR}${REG_EXP_0_TO_100_PERCENT}${REG_EXP_SPACE_SEPARATOR}${REG_EXP_0_TO_100_PERCENT}\\s*\\)$`,
     'i',
   ),
   HSLA_COMA: new RegExp(
-    `^hsla\\(\\s*(?:${REG_EXP_0_TO_359_DEG}|${REG_EXP_0_TO_2_PI_RAD})${REG_EXP_COMA_SEPARATOR}(?:(?:${REG_EXP_0_TO_100_PERCENT})|(?:${REG_EXP_0_TO_1_FRACTION}))${REG_EXP_COMA_SEPARATOR}(?:(?:${REG_EXP_0_TO_100_PERCENT})|(?:${REG_EXP_0_TO_1_FRACTION}))${REG_EXP_COMA_SEPARATOR}${REG_EXP_0_TO_1_FRACTION}\\s*\\)$`,
+    `^hsla\\(\\s*${REG_EXP_ANGLE}${REG_EXP_COMA_SEPARATOR}${REG_EXP_0_TO_100_PERCENT}${REG_EXP_COMA_SEPARATOR}${REG_EXP_0_TO_100_PERCENT}${REG_EXP_COMA_SEPARATOR}${REG_EXP_0_TO_1_FRACTION}\\s*\\)$`,
     'i',
   ),
   HSLA_SPACE: new RegExp(
-    `^hsla\\(\\s*(?:${REG_EXP_0_TO_359_DEG}|${REG_EXP_0_TO_2_PI_RAD})${REG_EXP_SPACE_SEPARATOR}(?:(?:${REG_EXP_0_TO_100_PERCENT})|(?:${REG_EXP_0_TO_1_FRACTION}))${REG_EXP_SPACE_SEPARATOR}(?:(?:${REG_EXP_0_TO_100_PERCENT})|(?:${REG_EXP_0_TO_1_FRACTION}))${REG_EXP_SLASH_SEPARATOR}${REG_EXP_0_TO_1_FRACTION}\\s*\\)$`,
+    `^hsla\\(\\s*${REG_EXP_ANGLE}${REG_EXP_SPACE_SEPARATOR}${REG_EXP_0_TO_100_PERCENT}${REG_EXP_SPACE_SEPARATOR}${REG_EXP_0_TO_100_PERCENT}${REG_EXP_SLASH_SEPARATOR}${REG_EXP_0_TO_1_FRACTION}\\s*\\)$`,
     'i',
   ),
 }
