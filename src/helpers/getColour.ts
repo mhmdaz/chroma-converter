@@ -109,49 +109,43 @@ export function getRgbHexAndAlpha(colour: string): Rgba {
       1: hueDegree,
       2: hueRadian,
       3: satPercent,
-      4: satFraction,
-      5: levelPercent,
-      6: levelFraction,
+      4: levelPercent,
     } = REG_EXP_MATCH['HSL_COMA'].exec(colour) || []
 
     return hslToRgb(
       hueDegree ? 'hsl_deg' : 'hsl_rad',
       hueDegree ? Number(hueDegree) : (Number(hueRadian) / Math.PI) * 180,
-      satFraction ? Number(satFraction) : Number(satPercent) / 100,
-      levelFraction ? Number(levelFraction) : Number(levelPercent) / 100,
+      Number(satPercent) / 100,
+      Number(levelPercent) / 100,
     )
   } else if (REG_EXP_MATCH['HSL_SPACE'].test(colour)) {
     const {
       1: hueDegree,
       2: hueRadian,
       3: satPercent,
-      4: satFraction,
-      5: levelPercent,
-      6: levelFraction,
+      4: levelPercent,
     } = REG_EXP_MATCH['HSL_SPACE'].exec(colour) || []
 
     return hslToRgb(
       hueDegree ? 'hsl_deg_space' : 'hsl_rad_space',
       hueDegree ? Number(hueDegree) : (Number(hueRadian) / Math.PI) * 180,
-      satFraction ? Number(satFraction) : Number(satPercent) / 100,
-      levelFraction ? Number(levelFraction) : Number(levelPercent) / 100,
+      Number(satPercent) / 100,
+      Number(levelPercent) / 100,
     )
   } else if (REG_EXP_MATCH['HSLA_COMA'].test(colour)) {
     const {
       1: hueDegree,
       2: hueRadian,
       3: satPercent,
-      4: satFraction,
-      5: levelPercent,
-      6: levelFraction,
-      7: alphaFraction,
+      4: levelPercent,
+      5: alphaFraction,
     } = REG_EXP_MATCH['HSLA_COMA'].exec(colour) || []
 
     return hslToRgb(
       hueDegree ? 'hsla_deg' : 'hsla_rad',
       hueDegree ? Number(hueDegree) : (Number(hueRadian) / Math.PI) * 180,
-      satFraction ? Number(satFraction) : Number(satPercent) / 100,
-      levelFraction ? Number(levelFraction) : Number(levelPercent) / 100,
+      Number(satPercent) / 100,
+      Number(levelPercent) / 100,
       Number(alphaFraction),
     )
   } else if (REG_EXP_MATCH['HSLA_SPACE'].test(colour)) {
@@ -159,17 +153,15 @@ export function getRgbHexAndAlpha(colour: string): Rgba {
       1: hueDegree,
       2: hueRadian,
       3: satPercent,
-      4: satFraction,
-      5: levelPercent,
-      6: levelFraction,
-      7: alphaFraction,
+      4: levelPercent,
+      5: alphaFraction,
     } = REG_EXP_MATCH['HSLA_SPACE'].exec(colour) || []
 
     return hslToRgb(
       hueDegree ? 'hsla_deg_space' : 'hsla_rad_space',
       hueDegree ? Number(hueDegree) : (Number(hueRadian) / Math.PI) * 180,
-      satFraction ? Number(satFraction) : Number(satPercent) / 100,
-      levelFraction ? Number(levelFraction) : Number(levelPercent) / 100,
+      Number(satPercent) / 100,
+      Number(levelPercent) / 100,
       Number(alphaFraction),
     )
   } else if (Object.keys(namedColours.basic).includes(colour.toLowerCase())) {
