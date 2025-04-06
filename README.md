@@ -60,8 +60,8 @@ Following are the supported colour formats (given with example)
 - **HSLA**<sup>\*</sup> - `hsla(120deg, 100%, 25%, 1)` or `hsla(120deg 100% 25% / 1)`
 
 - **HWB**<sup>\*#</sup> - `hwb(120deg 0% 50% / 1)`
-- **LAB**<sup>#</sup> - `lab(46 -51 49 / 1)`
-- **LCH**<sup>#</sup> - `lch(46% 67 134 / 1)`
+- **LAB**<sup>#</sup> - `lab(46.23 -51.7 49.9 / 1)`
+- **LCH**<sup>#</sup> - `lch(46.28% 67.98 134.38 / 1)`
 
 **\*** You can also use `rad` instead of `deg`
 
