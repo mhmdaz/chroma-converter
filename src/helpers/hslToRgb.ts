@@ -8,10 +8,9 @@ export function hslToRgb(
   alphaFraction: number = 1,
 ) {
   const c = (1 - Math.abs(2 * levelFraction - 1)) * satFraction
-  const x = c * (1 - Math.abs(((hueDegree / 60) % 2) - 1))
   const m = levelFraction - c / 2
 
-  const { red_, green_, blue_ } = getRgbFraction(hueDegree, c, x)
+  const { red_, green_, blue_ } = getRgbFraction(hueDegree % 360, c)
 
   return {
     type,
@@ -22,7 +21,9 @@ export function hslToRgb(
   }
 }
 
-function getRgbFraction(hueDegree: number, c: number, x: number) {
+function getRgbFraction(hueDegree: number, c: number) {
+  const x = c * (1 - Math.abs(((hueDegree / 60) % 2) - 1))
+
   if (0 <= hueDegree && hueDegree < 60) {
     return { red_: c, green_: x, blue_: 0 }
   } else if (60 <= hueDegree && hueDegree < 120) {
