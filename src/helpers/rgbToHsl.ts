@@ -1,3 +1,5 @@
+import { normaliseDegree } from './normalisers.js'
+
 interface Hsla {
   hueDegree: number
   hueRadian?: number
@@ -24,9 +26,7 @@ export function rgbToHsl(
 
   const satFraction = C_diff / (1 - Math.abs(2 * levelFraction - 1))
 
-  const hueDegree_ = getHueDegreeFromRgbFraction(red_, green_, blue_, C_max, C_diff)
-
-  const hueDegree = hueDegree_ < 0 ? hueDegree_ + 360 : hueDegree_
+  const hueDegree = normaliseDegree(getHueDegreeFromRgbFraction(red_, green_, blue_, C_max, C_diff))
 
   return {
     hueDegree,

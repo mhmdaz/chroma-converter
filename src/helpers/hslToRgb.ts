@@ -1,23 +1,27 @@
 import { numberTo2Hex } from './hex.js'
+import { normaliseFraction, normaliseDegree } from './normalisers.js'
 
 export function hslToRgb(
   type: string,
   hueDegree: number,
-  satFraction: number,
-  levelFraction: number,
-  alphaFraction: number = 1,
+  satPercent: string | number,
+  levelPercent: string | number,
+  alphaFraction: string | number = 1,
 ) {
+  const satFraction = normaliseFraction(Number(satPercent) / 100)
+  const levelFraction = normaliseFraction(Number(levelPercent) / 100)
+
   const c = (1 - Math.abs(2 * levelFraction - 1)) * satFraction
   const m = levelFraction - c / 2
 
-  const { red_, green_, blue_ } = getRgbFraction(hueDegree % 360, c)
+  const { red_, green_, blue_ } = getRgbFraction(normaliseDegree(hueDegree), c)
 
   return {
     type,
     redHex: numberTo2Hex(((red_ + m) * 255).toFixed()),
     greenHex: numberTo2Hex(((green_ + m) * 255).toFixed()),
     blueHex: numberTo2Hex(((blue_ + m) * 255).toFixed()),
-    alphaFraction,
+    alphaFraction: normaliseFraction(alphaFraction),
   }
 }
 

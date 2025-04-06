@@ -1,13 +1,15 @@
+const REG_EXP_ANY_NUMBER = '([+-]?(?:\\d+|(?:\\d*\\.\\d+)))'
+
 const REG_EXP_HEX = '[a-f\\d]'
 
-const REG_EXP_0_TO_255 = '0*((?:1?\\d{1,2})|(?:2[0-4]\\d)|(?:25[0-5]))'
-const REG_EXP_N128_TO_127 = '(-?\\d+)'
+const REG_EXP_0_TO_255 = REG_EXP_ANY_NUMBER
+const REG_EXP_N128_TO_127 = REG_EXP_ANY_NUMBER
 
-const REG_EXP_0_TO_1_FRACTION = '0*((?:0?(?:\\.\\d+)?)|(?:1(?:\\.0+)?))'
-const REG_EXP_0_TO_100_PERCENT = '0*(\\d{1,2}|100)\\%'
+const REG_EXP_0_TO_1_FRACTION = REG_EXP_ANY_NUMBER
+const REG_EXP_0_TO_100_PERCENT = `${REG_EXP_ANY_NUMBER}\\%`
 
-const REG_EXP_0_TO_359_DEG = '0*((?:[12]?\\d{1,2})|(?:3[0-5]\\d))(?:deg)?'
-const REG_EXP_0_TO_2_PI_RAD = '0*(\\d+|(?:\\d*\\.\\d+))rad'
+const REG_EXP_0_TO_359_DEG = `${REG_EXP_ANY_NUMBER}(?:deg)?`
+const REG_EXP_0_TO_2_PI_RAD = `${REG_EXP_ANY_NUMBER}rad`
 const REG_EXP_ANGLE = `(?:(?:${REG_EXP_0_TO_359_DEG})|(?:${REG_EXP_0_TO_2_PI_RAD}))`
 
 const REG_EXP_COMA_OR_SPACE_SEPARATOR = '\\s*[,\\s]\\s*'
