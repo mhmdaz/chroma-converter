@@ -9,6 +9,7 @@
   ],
   "keywords": [
     "css-color-converter",
+    "validate-color",
     "hex-to-rgb",
     "rgb-to-hex",
     "hsl-to-rgb",
@@ -20,6 +21,11 @@
     "build": "tsc --build"
   },
   "author": "Mhmdaz <dev@niralaakam.com> (https://niralaakam.com)",
+  "homepage": "https://github.com/niralaakam/niram",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niralaakam/niram.git"
+  },
   "license": "LGPL-3.0",
   "private": false,
   "devDependencies": {

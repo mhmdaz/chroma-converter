@@ -39,7 +39,7 @@ Above code will log the converted colour details to console as:
 To validate colours:
 
 ```
-import { validateColor} from 'niram'
+import { validateColor } from 'niram'
 
 const isColorValid = validateColor('hwb(120deg 0% 50% / 1)')
 
@@ -64,6 +64,7 @@ Following are the supported colour formats (given with example)
 - **LCH**<sup>#</sup> - `lch(46.28% 67.98 134.38 / 1)`
 
 **\*** You can also use `rad` instead of `deg`
+
 **\#** Support is only available for **Validation**
 
 ## Unsupported Formats
