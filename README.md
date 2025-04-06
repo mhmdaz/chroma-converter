@@ -10,6 +10,9 @@ Install `niram` using any of the command below
 - `npm install niram`
 
 ## Usage
+
+To convert colours:
+
 ```
 import { convertColor } from 'niram'
 
@@ -33,6 +36,18 @@ Above code will log the converted colour details to console as:
 }
 ```
 
+To validate colours:
+
+```
+import { validateColor} from 'niram'
+
+const isColorValid = validateColor('hwb(120deg 0% 50% / 1)')
+
+console.log(isColorValid)
+
+// Outputs: true
+```
+
 ## Supported Formats
 
 Following are the supported colour formats (given with example)
@@ -41,17 +56,20 @@ Following are the supported colour formats (given with example)
 - **HEX** - `#008000` or `#0f0`
 - **RGB** - `rgb(0, 128, 0)` or `rgb(0 128 0)`
 - **RGBA** - `rgba(0, 128, 0, 1)` or `rgba(0 128 0 / 1)`
-- **HSL\*** - `hsl(120deg, 100%, 25%)` or `hsl(120deg 100% 25%)`
-- **HSLA\*** - `hsla(120deg, 100%, 25%, 1)` or `hsla(120deg 100% 25% / 1)`
+- **HSL**<sup>\*</sup> - `hsl(120deg, 100%, 25%)` or `hsl(120deg 100% 25%)`
+- **HSLA**<sup>\*</sup> - `hsla(120deg, 100%, 25%, 1)` or `hsla(120deg 100% 25% / 1)`
 
+- **HWB**<sup>\*#</sup> - `hwb(120deg 0% 50% / 1)`
+- **LAB**<sup>#</sup> - `lab(46.23 -51.7 49.9 / 1)`
+- **LCH**<sup>#</sup> - `lch(46.28% 67.98 134.38 / 1)`
 
-**\*** You can also use `rad` instead of `deg` in `hsl()` and `hsla()`
+**\*** You can also use `rad` instead of `deg`
+**\#** Support is only available for **Validation**
 
 ## Unsupported Formats
 
-Following are currently unsupported, but support will be added soon.
+Following are currently unsupported for **conversion**, but support will be added soon.
 
+- `hwb()`
 - `lab()`
 - `lch()`
-- `xyz()`
-- `hwb()`
