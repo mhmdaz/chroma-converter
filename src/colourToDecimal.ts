@@ -1,5 +1,5 @@
-import { getAlphaHexFromFraction } from './helpers/hex'
-import { getRgbHexAndAlpha } from './helpers/getColour'
+import { getAlphaHexFromFraction } from './helpers/hex.js'
+import { getRgbHexAndAlpha } from './helpers/getColour.js'
 
 export function colourToDecimal(colour: string | null) {
   if (!colour) {

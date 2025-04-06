@@ -1,7 +1,7 @@
 import untypedNamedColours from '../assets/namedColours.json' with { type: 'json' }
-import { REG_EXP_MATCH } from '../regExpMatches'
-import { getAlphaFractionFromHex, numberTo2Hex } from './hex'
-import { hslToRgb } from './hslToRgb'
+import { REG_EXP_MATCH } from '../regExpMatches.js'
+import { getAlphaFractionFromHex, numberTo2Hex } from './hex.js'
+import { hslToRgb } from './hslToRgb.js'
 
 interface NamedColours {
   [index: string]: string

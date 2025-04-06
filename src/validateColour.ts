@@ -1,5 +1,5 @@
 import untypedNamedColours from './assets/namedColours.json' with { type: 'json' }
-import { REG_EXP_MATCH } from './regExpMatches'
+import { REG_EXP_MATCH } from './regExpMatches.js'
 
 interface NamedColours {
   [index: string]: string

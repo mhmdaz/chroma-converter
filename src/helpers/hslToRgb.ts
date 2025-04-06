@@ -1,4 +1,4 @@
-import { numberTo2Hex } from './hex'
+import { numberTo2Hex } from './hex.js'
 
 export function hslToRgb(
   type: string,

@@ -1,4 +1,4 @@
-import { REG_EXP_MATCH } from '../regExpMatches'
+import { REG_EXP_MATCH } from '../regExpMatches.js'
 
 interface Hsla {
   hueDegree: number

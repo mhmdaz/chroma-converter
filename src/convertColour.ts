@@ -1,7 +1,7 @@
-import { getAlphaHexFromFraction } from './helpers/hex'
-import { getRgbHexAndAlpha, getColourName } from './helpers/getColour'
-import { extractHsl } from './helpers/extractHsl'
-import { rgbToHsl } from './helpers/rgbToHsl'
+import { getAlphaHexFromFraction } from './helpers/hex.js'
+import { getRgbHexAndAlpha, getColourName } from './helpers/getColour.js'
+import { extractHsl } from './helpers/extractHsl.js'
+import { rgbToHsl } from './helpers/rgbToHsl.js'
 
 export function convertColour(colour: string | null) {
   if (!colour) {
